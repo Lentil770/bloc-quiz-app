@@ -42,6 +42,7 @@ const STORE = [
     correctA: 'Purim'
   }];
  
+  console.log(STORE);
 
 let score = 0;
 let currentQ = 0;
@@ -51,14 +52,18 @@ let currentQ = 0;
 function updateScore(score) {
   score ++;
   $('.js-score').text(score);
+  console.log('update score ran');
 }
 
+//function updateCurrentQ()
 function updateQ(currentQ) {
   currentQ ++;
   $('.js-q-number').text(currentQ);
+  console.log('updateQran');
 }
 
 
+//start button working!
 //when start/next-q clicked, html of question-page becomes this
 function updateQuestionPage(currentQ) {
   $('.question-page').html(`
@@ -85,6 +90,7 @@ function updateQuestionPage(currentQ) {
 <button type='button' class='submit-button'>submit</button>
 </form>`
 );
+console.log('updateQPage is workingg');
 $('.question-page').removeClass('hidden');
 };
     
@@ -97,8 +103,11 @@ function start() {
   $('.start-page').addClass('hidden');
   //q replace function//
   updateQuestionPage(0);
+  //replaced updateQ and updateScore function shortcuts with full code bc wasnt working?
   currentQ ++;
   $('.js-q-number').text(currentQ);
+  console.log('updateQran');
+  console.log('start is working !', currentQ)
 })};
 
 //when check answer is clicked:
@@ -107,10 +116,11 @@ function start() {
       //  score is updated
        // well done page(img, next btn, words) 
 //    if incorrect:
-  //      incorrect page is displayed + correct a
+  //      incorrect page is displayed + correct a + 
 function submitAnswerButton() {
   $('.question-page').on('click', '.submit-button', function(event) {
     $('.question-page').addClass('hidden');
+    console.log('this worked!b');
     let answer = $('input:checked').val();
     if (answer == STORE[currentQ-1].correctA) {
       score ++;
@@ -122,6 +132,8 @@ function submitAnswerButton() {
         <img class='elmo-img' src='https://i.pinimg.com/originals/79/e4/22/79e422c8461c173ec0dfcd7fef95f63f.jpg' alt='img alt'>
         <p class='answer-correct'>correct!</p>
       </div>`).removeClass('hidden')
+      console.log('correct answer worked');
+      //result page made acc. to correct\
     }
     else {
       $('.question-result').html(`
@@ -130,7 +142,9 @@ function submitAnswerButton() {
         <p class='answer-correct'>Incorrect:(</p>
       </div>
       <p class='correct-answer'>The correct answer is ${STORE[currentQ-1].correctA}</p>`).removeClass('hidden');
+      console.log('incorrect answer worked');
     }
+    console.log('this worked!c');
     if (currentQ == 5) {
       $('.question-result').append(`
     <button type='button' class='finish js-finish'>finish quiz!</button>`)
@@ -139,20 +153,23 @@ function submitAnswerButton() {
       $('.question-result').append(`
     <button type='button' class='next-q js-next-q'>next q!</button>`)
   }})};
-
     
 //when next q clicked:
   //  result page hidden
     //q/a info replaced with current info
 //    q page displayed
   //  current q number updated(+1)
-  //if last q, button changed to finish
+  //if last q, button changed to finish 
 function nextQButton() {
 $('.question-result').on('click', '.js-next-q', function(event) {
   currentQ ++;
   $('.js-q-number').text(currentQ);
+  console.log('updateQran, currentQ is', currentQ);
+  console.log('next-q updateQ working', currentQ)
     $('.question-result').addClass('hidden');
     updateQuestionPage(currentQ-1);
+
+    console.log('next q worked');
 })};
 
 
@@ -176,6 +193,7 @@ function showFinalResult(score) {
      <p class='learn-more'>click on logo to learn more about the jewish holidays!</p>
      `)
   };
+  console.log('showFinalResult worked! ')
 };
 
 //finish button clicked:
@@ -187,8 +205,10 @@ function showFinalResult(score) {
 function finishButton() {
 $('.question-result').on('click', '.js-finish', function(event) {
   $('.question-result').addClass('hidden');
+    console.log('finish-click working a');
     showFinalResult(score);
     $('.end-results').removeClass('hidden');
+    console.log('finish-click working b');
 })};
 
 
@@ -201,8 +221,10 @@ $('.end-results').on('click', '.restart', function(event) {
   $('.start-page').removeClass('hidden');
   currentQ = 0
   $('.js-q-number').text(currentQ);
+  console.log('updateQ reset');
   score = 0;
   $('.js-score').text(score);
+  console.log('score reset');
 })};
 
 function startFunction() {
@@ -213,4 +235,3 @@ function startFunction() {
   restart();
 };
 $(startFunction);
- 
