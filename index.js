@@ -112,6 +112,7 @@ function submitAnswerButton() {
   $('.question-page').on('click', '.submit-button', function(event) {
     $('.question-page').addClass('hidden');
     let answer = $('input:checked').val();
+    if (answer == STORE[currentQ-1].correctA) {
       score ++;
       $('.js-score').text(score);
       console.log('update score ran');
