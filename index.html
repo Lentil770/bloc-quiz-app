@@ -8,69 +8,32 @@
   </head>
   <body>
     <header class='navbar js-navbar'>
-      <p class='current-q js-current-q'>Q: 1/5</p>
-      <p class='score js-score'>0/5</p>
-      <!--link to https://www.chabad.org/holidays/default_cdo/jewish/holidays.htm-->
-      <btn type='img' class='quiz-logo js-quiz-logo'></btn>
-      <btn class-'restart'><img class='logo' src='https://c7.uihere.com/files/683/278/525/star-of-david-judaism-hexagram-symbol-clip-art-jewish-holidays.jpg' ></btn>
+      <p class='current-q js-current-q'>Q: <span class='js-q-number'>0</span>/5</p>
+      <p class='score js-score'>0</p>
+      <a href="https://www.chabad.org/holidays/default_cdo/jewish/holidays.htm" class='quiz-logo js-quiz-logo'><img class='logo' 
+        src='https://c7.uihere.com/files/683/278/525/star-of-david-judaism-hexagram-symbol-clip-art-jewish-holidays.jpg' alt='logo'></a>
     </header>
 
     <main class='main'>
-      <div class='start-page'>
-        <btn class='start'>start</btn>
-        <p class='quiz-description'>la la la this quix is five qs one at a time, en;joy!!</p>
-      </div>
+      <section class='start-page'>
+        <button class='start'>start</button>
+        <p class='quiz-description'>Enjoyand good luck!</p>
+      </section>
 
-      <div class='question-page hidden'>
-        <form class='quiz-q'>
-          <p class='question'>who what when where why??</p>
-          <fieldset class='answer-choice'>
-            <div>
-              <input type="radio" name="answer"value="a" >
-              <label for="a">a</label>
-            </div>
-            <div>
-             <input type="radio" name="answer" value="b">
-            <label for="b">b</label>
-            </div>
-            <div>
-              <input type="radio" name="answer" value="c">
-              <label for="c">c</label>
-            </div>
-            <div>
-             <input type="radio" name="answer" value="d">
-            <label for="d">d</label>
-            </div> 
-          </fieldset>
-          <input type='submit' class='submit-button'>
-        </form>
-      </div>
 
-      <div class='question-result hidden'>
-        <div class='q-result-img'>
-          <img src='' alt='img alt'>
-          <p class='answer-correct'>correct</p>
-          <p class='answer-correct hidden'>incorrect</p>
-        </div>
-        <p class='answer-comment'>fact abt yt </p> <!--OR-->
-        <p class='correct-answer hidden'>the real answer is</p>
-        <btn type='button' class='next-q js-next-q'>next q!</btn>
-      </div>
+      <section class='question-page hidden'>
+      </section>
 
-      <div class='end-results hidden'>
-        <img class='end-reaction'>
-        <p class='final-score'>your final score is:</p>
-        <p class='final comment'>Final random comment</p>
-        <div class='img-row'>
-          <img class='img-1' src='' alt='img'>
-          <img class='img-2' src='' alt='img'>
-          <img class='img-3' src='' alt='img'>
-          <img class='img-4' src='' alt='img'>
-        </div>
-        <btn class='restart' type='button' >restart</btn>
-      </div>
+
+      <section class='question-result '>
+      </section>
+
+
+      <section class='end-results'>
+      </section>
+
     </main>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
-    <script src="script.js"></script>
+    <script src="index.js"></script>
   </body>
 </html>

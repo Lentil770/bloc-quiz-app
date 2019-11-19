@@ -41,11 +41,12 @@ body {
   left: 20px;
 }
 
-.logo {
+
+.logo, .quiz-logo {
   height: 50px;
   border-radius: 50%;
   position :relative;
-  left: 47%;
+  left: 47%;  
 }
 
 .start {
